@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts by {{ author.name }}</title>
+</head>
+<body>
+    <h1>Posts by {{ author.name }}</h1>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> - Published on: {{ post.published_date }}</li>
+        {% empty %}
+            <li>No posts found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

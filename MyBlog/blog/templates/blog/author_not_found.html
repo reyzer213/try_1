@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts by {{ author.name }}</title>
+</head>
+<body>
+    <h1>Posts by {{ author.name }}</h1>
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.title }} - Published on: {{ post.published_date }}</li>
+        {% empty %}
+            <li>No posts found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
